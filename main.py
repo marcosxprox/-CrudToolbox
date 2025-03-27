@@ -1,9 +1,8 @@
-from ferramentas_models import Ferramentas
+from tools_models import Tools
 
-from usuarios_models import Usuarios
+from users_models import Users
 
-from emprestimos_models import Emprestimos as e
-
+from loans_models import Loans as l
 
 #usuario.adicionar_users(nome_user, email_user)
 if __name__ == "__main__":
@@ -14,7 +13,7 @@ if __name__ == "__main__":
    #consulte_id = int(input("Digite o id do usuario a qual deseja consultar:"))
 
     #ferramenta_nome = input("Digite o nome da ferramenta a ser cadastrada:")
-    #descricao = input("Digite a desceicao da ferramenta:")
+    #descricao = input("Digite a descricao da ferramenta:")
     #campo = bool(input("disponibilidade:"))
     #campo_disponibilidade = 1
 
@@ -23,7 +22,7 @@ if __name__ == "__main__":
     # usuario = Usuarios().adicionar_users(nome_user, email_user)
     #Usuarios().update_users(nome_user, email_user, user_id)
     #Usuarios().delete_user(user_id)
-    #Usuarios().consultar_use(consulte_id)
+    #Usuarios().consulta_user(consult_id)
 
     #Ferramentas().cadastrar_ferramenta(ferramenta_nome, descricao, campo)
     #Ferramentas().listar_ferramnetas(campo_disponibilidade)
@@ -33,7 +32,7 @@ if __name__ == "__main__":
    #data_emprestimo = input("Digite a data do emprestimo:")
    #e.emprestar_ferramenta(id_users, id_ferramenta, data_emprestimo)
 
-   id_emprestimo = int(input("Digite o id do emprestimo"))
+   id_emprestimo = int(input("Digite o id do emprestimo:"))
    data_devolucao = input("Digite a data de devolução:")
-   e.devolver_ferramenta(id_emprestimo, data_devolucao)
+   l.return_tools(id_emprestimo, data_devolucao)
 

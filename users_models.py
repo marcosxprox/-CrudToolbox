@@ -1,11 +1,9 @@
-from twisted.conch.insults.window import cursor
-
 from database import conectar
 
-class Usuarios:
+class Users:
 
     @staticmethod
-    def adicionar_users(nome, email):
+    def add_users(nome, email):
         conexao = None
         try:
             conexao = conectar()
@@ -56,7 +54,7 @@ class Usuarios:
                 conexao.close()
 
     @staticmethod
-    def consultar_use(consulte_id):
+    def consult_user(consult_id):
         conexao = None
         try:
             conexao = conectar()
