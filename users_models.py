@@ -54,7 +54,7 @@ class Users:
                 conexao.close()
 
     @staticmethod
-    def consult_user(consult_id):
+    def consult_users():
         conexao = None
         try:
             conexao = conectar()
@@ -64,7 +64,7 @@ class Users:
             conexao.commit()
             print(resul)
         except Exception as e:
-            print(f"Erro ao tentar consultar usuario {e}")
+            print(f"Erro ao tentar listar usuarios disponiveis {e}")
         finally:
             if conexao is not None:
                 conexao.close()
@@ -81,7 +81,7 @@ class Users:
             ''', (id_users,))
             return cur.fetchall()
         except Exception as e:
-            print(f"Erro ao tentar puxar o id do usuario {e}")
+            print(f"Erro ao tentar consultar id do usuario {e}")
         finally:
             if conexao is not None:
                conexao.close()
