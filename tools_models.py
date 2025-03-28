@@ -1,12 +1,11 @@
 from twisted.conch.insults.window import cursor
 
-
 from database import conectar
 
-class Ferramentas:
+class Tools:
 
     @staticmethod
-    def cadastrar_ferramenta(ferramenta_nome, descricao, campo):
+    def register_tool(ferramenta_nome, descricao, campo):
         conexao = None
         try:
             conexao = conectar()
@@ -25,7 +24,7 @@ class Ferramentas:
                conexao.close()
 
     @staticmethod
-    def listar_ferramnetas(campo_disponibilidade):
+    def list_tools(campo_disponibilidade):
         conexao = None
         try:
             conexao = conectar()
@@ -41,7 +40,7 @@ class Ferramentas:
                conexao.close()
 
     @staticmethod
-    def get_ferramenta(id):
+    def get_tool(id):
         conexao = None
         try:
             conexao = conectar()
