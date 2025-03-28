@@ -25,7 +25,7 @@ class Loans:
          return result
 
     @staticmethod
-    def loan_tools(id_users, id_ferramenta, data_emprestimo):
+    def loan_tools(id_users, id_ferramenta, data_emprestimo, quantidade = 0):
 
         cur = get_conn()
         usuario = u.get_user(id_users)
@@ -40,8 +40,9 @@ class Loans:
            else:
                try:
                   cur.execute('''
-                  INSERT INTO emprestimos (usuariosID, ferramentasID, data_emprestimo) VALUES (?,?,?)''',
-                  (id_users, id_ferramenta, data_emprestimo))
+                  INSERT INTO emprestimos (usuariosID, ferramentasID, data_emprestimo, quantidade) VALUES (?,?,?,?)''',
+                  (id_users, id_ferramenta, data_emprestimo, quantidade))
+                  cur.execute('''UPDATE ferramentas SET disponibilidade = ? WHERE id = ?''',(0, id_ferramenta))
                   cur.connection.commit()
                except Exception as e:
                    print(f"Erro ao tentar emprestar ferramenta {e}")
